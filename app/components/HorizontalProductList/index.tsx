@@ -22,7 +22,7 @@ export function HorizontalProductList({
         <div className="flex space-x-4 px-4">
           {products.map((product) => (
             <div key={product.code} className="flex-none w-80">
-              <ProductCard product={product} variant="horizontal" />
+              <ProductCard product={product} variant="horizontal" noLink />
             </div>
           ))}
         </div>

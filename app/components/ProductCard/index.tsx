@@ -1,18 +1,27 @@
-import { Link } from "@remix-run/react";
+import { useNavigate } from "@remix-run/react";
 import { formatPrice } from "~/utils/common";
 import { ProductCardProps } from "./types";
+import { CardWrapper } from "../CardWrapper";
 
 export function ProductCard({
   product,
   variant = "default",
+  noLink = false,
 }: ProductCardProps) {
+  const navigate = useNavigate();
   const isHorizontal = variant === "horizontal";
 
+  const handleClick = () => {
+    navigate(`/product/${product.code}`);
+  };
+
   return (
-    <Link
+    <CardWrapper
+      noLink={noLink}
+      onClick={handleClick}
       to={`/product/${product.code}`}
       className={`block rounded-lg shadow hover:shadow-lg transition-shadow bg-white
-        ${isHorizontal ? "h-full" : "w-full sm:max-w-sm"}`}
+        ${isHorizontal ? "h-full cursor-pointer" : "w-full sm:max-w-sm"}`}
     >
       <div className={`${isHorizontal ? "flex p-3 gap-3" : "p-3"}`}>
         <div
@@ -25,6 +34,7 @@ export function ProductCard({
             src={product.imageUrl}
             alt={product.name}
             className="w-full h-full object-contain"
+            draggable={false}
           />
         </div>
         <div className="flex-grow space-y-1.5">
@@ -51,6 +61,6 @@ export function ProductCard({
           </div>
         </div>
       </div>
-    </Link>
+    </CardWrapper>
   );
 }
