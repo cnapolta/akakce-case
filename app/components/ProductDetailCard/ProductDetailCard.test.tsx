@@ -21,7 +21,7 @@ describe("ProductDetailCard", () => {
 
     expect(screen.getByText("iPhone 15 128 GB")).toBeInTheDocument();
     expect(screen.getByText("Apple")).toBeInTheDocument();
-    expect(screen.getByText("94 sellers")).toBeInTheDocument();
+    expect(screen.getByText("94 satıcı")).toBeInTheDocument();
     expect(screen.getByText("En Popüler")).toBeInTheDocument();
   });
 

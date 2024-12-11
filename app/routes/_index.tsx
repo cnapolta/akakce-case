@@ -54,12 +54,12 @@ export default function Index() {
     <main className="min-h-screen bg-gray-50 py-8">
       <Container className="">
         <HorizontalProductList
-          title="Featured Products"
+          title="Öne Çıkan Ürünler"
           products={initialData.horizontalProductList}
         />
 
         <ProductGrid
-          title="All Products"
+          title="Tüm Ürünler"
           products={products}
           onLoadMore={loadMore}
           hasMore={!!nextUrl}
