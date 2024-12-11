@@ -45,7 +45,7 @@ export function ProductDetailCard({ product }: ProductDetailCardProps) {
             </div>
 
             <div className="space-y-2">
-              <h3 className="font-semibold">Storage Options</h3>
+              <h3 className="font-semibold">Depolama Seçenekleri</h3>
               <div className="flex flex-wrap gap-2">
                 {product.storageOptions.map((option) => (
                   <button
@@ -59,11 +59,11 @@ export function ProductDetailCard({ product }: ProductDetailCardProps) {
             </div>
 
             <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-              <span>{product.countOfPrices} sellers</span>
+              <span>{product.countOfPrices} satıcı</span>
               {product.freeShipping && (
-                <Badge variant="success">Free Shipping</Badge>
+                <Badge variant="success">Ücretsiz Kargo</Badge>
               )}
-              <span>Last updated: {product.lastUpdate}</span>
+              <span>Son güncelleme: {product.lastUpdate}</span>
             </div>
           </div>
         </div>

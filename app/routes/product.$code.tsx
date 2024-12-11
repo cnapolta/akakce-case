@@ -53,7 +53,7 @@ export default function ProductDetail() {
               d="M15 19l-7-7 7-7"
             />
           </svg>
-          Back to Home
+          Geri
         </Link>
         <ProductDetailCard product={product} />
       </Container>
